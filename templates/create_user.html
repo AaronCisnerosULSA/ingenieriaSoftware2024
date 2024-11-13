@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Crear Usuario{% endblock %}
+{% block content %}
+    <h2>Crear Nuevo Usuario</h2>
+    <form method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+        <button type="submit">Crear Usuario</button>
+    </form>
+    <a href="{{ url_for('root') }}">Volver a la lista de usuarios</a>
+{% endblock %}

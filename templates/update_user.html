@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Actualizar Usuario{% endblock %}
+{% block content %}
+    <h2>Actualizar Usuario</h2>
+    <form method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="{{ user.name }}" required>
+        
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" value="{{ user.telefono }}" required>
+        
+        <button type="submit">Actualizar Usuario</button>
+    </form>
+    <a href="{{ url_for('root') }}">Volver a la lista de usuarios</a>
+{% endblock %}

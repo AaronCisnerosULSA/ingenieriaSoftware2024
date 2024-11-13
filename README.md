@@ -1,3 +1,6 @@
+# ingenieriaSoftware2024
+Repositorio para la asignatura de Ingeniería de Software IIIC2024 ULSA
+=======
 # Proyecto Tienda Online
 
 Este proyecto es una API de ejemplo desarrollada en Flask para demostrar cómo pasar de un diseño básico a una implementación interactiva con endpoints REST. 
@@ -55,3 +58,4 @@ Recursos de Aprendizaje
   Flask Documentation
   Git Guide
   SQLAlchemy Documentation
+>>>>>>> c025feea3137cf164f29f9397696841bf67be502

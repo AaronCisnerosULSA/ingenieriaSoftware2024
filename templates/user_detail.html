@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Detalle de Usuario{% endblock %}
+{% block content %}
+    <h2>Detalle de Usuario</h2>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Nombre:</strong> {{ user.name }}</p>
+    <p><strong>Teléfono:</strong> {{ user.telefono }}</p>
+    <p><strong>Status:</strong> {{ user.status }}</p>
+    <a href="{{ url_for('root') }}">Volver a la lista de usuarios</a>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Lista de Usuarios{% endblock %}
+{% block content %}
+    <h2>Usuarios</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Status</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.telefono }}</td>
+                <td>{{ user.status }}</td>
+                <td>
+                    <a href="{{ url_for('get_user', user_id=user.id) }}">Ver</a> |
+                    <a href="{{ url_for('update_user', user_id=user.id) }}">Editar</a> |
+                    <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post" style="display:inline;">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

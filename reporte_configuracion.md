@@ -126,5 +126,5 @@ La cual recibirá el mensaje y código en main.py.
 
 Interfaz principal
 ```markdown
-![Principal](https://github.com/QuesilloLover/ingenieriaSoftware2024/raw/master/foto1.png)
+![Principal](https://github.com/QuesilloLover/ingenieriaSoftware2024/blob/master/foto1.png)
 ```

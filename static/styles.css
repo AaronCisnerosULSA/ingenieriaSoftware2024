@@ -1,0 +1,152 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #fff0f6;
+    color: #333;
+}
+
+h1,h2 {
+    text-align: center;
+    color: #ff69b4; 
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto 20px auto; 
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ffb6c1;
+    text-align: center;
+}
+
+th {
+    background-color: #ffcccb; 
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+a {
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff1493;
+    text-decoration: underline;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto; 
+    background-color: #ffebf7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #ff69b4; 
+    font-size: 1.1rem;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+input {
+    border: 2px solid #ffb6c1;
+    background-color: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #ff69b4; 
+}
+
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff1493; 
+}
+
+strong {
+    color: #ff69b4; 
+    font-weight: bold;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+a:hover {
+    background-color: #ff1493;
+    color : white; 
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffebf7; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-container {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffebf7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-container h1 {
+    font-size: 3rem;
+    color: #ff1493;
+}
+
+.error-container p {
+    font-size: 1.3rem;
+    color: #ff69b4; 
+}
+
+img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

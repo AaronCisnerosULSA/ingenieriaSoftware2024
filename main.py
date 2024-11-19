@@ -61,6 +61,7 @@ def update_user(user_id):
         cursor.execute("UPDATE users SET name = ?, telefono = ?, status = ? WHERE id = ?",
                        (data["name"], data["telefono"], "user updated", user_id))
         con.commit()
+        
         return redirect(url_for("root"))
 
     cursor.execute("SELECT * FROM users WHERE id = ? AND status != 'user deleted'", (user_id,))

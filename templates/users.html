@@ -4,11 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #2980b9;
+        }
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto 20px;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .actions a {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+        }
+        .actions a:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de Usuarios</h1>
-    <a href="/">Volver al inicio</a> | <a href="/users/new">Agregar un usuario</a>
-    <table border="1">
+    <div class="navigation">
+        <a href="/">Volver al inicio</a> | <a href="/users/new">Agregar un usuario</a>
+    </div>
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,8 +85,8 @@
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.telefono }}</td>
-                <td>
-                    <a href="/users/edit/{{ user.id }}">Editar</a> |
+                <td class="actions">
+                    <a href="/users/edit/{{ user.id }}">Editar</a>
                     <a href="/users/delete/{{ user.id }}">Eliminar</a>
                 </td>
             </tr>

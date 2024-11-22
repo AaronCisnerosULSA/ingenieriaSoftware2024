@@ -7,7 +7,6 @@ body {
     line-height: 1.6;
 }
 
-/* Estilos para la página de inicio */
 h1 {
     text-align: center;
     color: #4CAF50;
@@ -51,7 +50,6 @@ ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Estilos para la página de usuarios */
 a {
     text-decoration: none;
     font-size: 1.2em;
@@ -135,7 +133,7 @@ table td a[href^='/users/delete'] {
 table td a[href^='/users/delete']:hover {
     background-color: #FFE5E5;
 }
-/* Estilos generales para el formulario de "Agregar Usuario" */
+
 h1 {
     text-align: center;
     color: #4CAF50;
@@ -175,13 +173,13 @@ form label {
 }
 
 form input {
-    width: 100%; /* Asegura que el campo de entrada ocupe todo el ancho disponible dentro del formulario */
+    width: 100%;
     padding: 10px;
     font-size: 1em;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+    box-sizing: border-box;
 }
 
 form button {
@@ -194,7 +192,7 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho del botón */
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
@@ -206,14 +204,14 @@ a {
     border-radius: 5px;
     display: inline-block;
     margin: 20px;
-    border: 2px solid #007BFF; /* Borde rectangular */
-    background-color: #f4f4f9; /* Fondo gris claro */
+    border: 2px solid #007BFF;
+    background-color: #f4f4f9;
 }
 
 a:hover {
     color: #0056b3;
-    background-color: #007BFF; /* Fondo azul al pasar el ratón */
-    border-color: #0056b3; /* Cambio de borde al pasar el ratón */
+    background-color: #007BFF;
+    border-color: #0056b3;
 }
 
 

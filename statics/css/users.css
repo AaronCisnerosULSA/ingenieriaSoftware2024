@@ -1,0 +1,69 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #444;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin: 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:active {
+    color: #003f8a;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+tr:hover {
+    background-color: #e9ecef;
+}
+
+td a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+td a:hover {
+    color: #0056b3;
+}

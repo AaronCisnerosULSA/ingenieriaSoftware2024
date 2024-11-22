@@ -1,0 +1,39 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f8ff;
+    color: #406692;
+    text-align: center;
+}
+
+/* Estilos para enlaces */
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #a3bfdf;
+}
+
+th {
+    background-color: #406692;
+    color: white;
+}

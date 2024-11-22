@@ -1,0 +1,78 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    color: #406692;
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Enlace */
+a {
+    color: #0963e2;
+    text-decoration: none;
+    margin-bottom: 50px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del formulario */
+form {
+    background-color: #a3bfdf;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Etiquetas */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+/* Botón */
+button {
+    background-color: #406692;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: #084bb7;
+}

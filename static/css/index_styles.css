@@ -1,0 +1,63 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Color de fondo azul claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Estilo para el encabezado (Bienvenido) */
+h1 {
+    font-size: 36px;
+    color: #1e3d8e; /* Azul oscuro */
+    margin-bottom: 10px;
+}
+
+/* Estilo para el párrafo (Selecciona la opción) */
+p {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Estilo para la lista de opciones */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Estilo para los enlaces */
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #1e3d8e; /* Azul oscuro */
+    padding: 10px 20px;
+    background-color: #e0f7fa; /* Azul claro */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover para los enlaces */
+a:hover {
+    background-color: #4caf50; 
+    color: white;
+}

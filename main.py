@@ -1,60 +1,84 @@
-from flask import Flask, jsonify, request
+from flask import Flask, render_template, request, redirect, url_for
+from sqlite3 import connect
+from helpers import apology
 
 app = Flask(__name__)
 
-# Endpoint raíz
+# Configuración de la base de datos
+con = connect("database.db", check_same_thread=False)
+cursor = con.cursor()
+
+# Creación de la tabla users
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        telefono TEXT NOT NULL,
+        status VARCHAR(20) NOT NULL
+    )
+""")
+con.commit()
+
+# Página principal que lista todos los usuarios 
 @app.route("/")
 def root():
-    return "root"
+    cursor.execute("SELECT * FROM users WHERE status != 'user deleted'")
+    rows = cursor.fetchall()
+    
+    column_names = [description[0] for description in cursor.description]
+    list_users = [dict(zip(column_names, row)) for row in rows]
 
+    return render_template("index.html", users=list_users)
 
-'''
-Crear los endpoints para los siguientes métodos
-GET --> Obtener información
-POST --> Crear información
-PUT --> Actualizar información
-DELETE --> Borrar información
-'''
-# Endpoint para obtener un usuario por ID
-@app.route("/users/<user_id>")
+# Página de detalle de un usuario 
+@app.route("/users/<int:user_id>")
 def get_user(user_id):
-    user = {
-        "id": user_id,
-        "name": "Aarock",
-        "telefono": "57993449"
-    }
-    query = request.args.get("query")
-    if query:
-        user["query"] = query
-    return jsonify(user), 200
+    cursor.execute("SELECT * FROM users WHERE id = ? AND status != 'user deleted'", (user_id,))
+    row = cursor.fetchone()
+    if row:
+        column_names = [description[0] for description in cursor.description]
+        user = dict(zip(column_names, row))
+        return render_template("user_detail.html", user=user)
+    else:
+        return apology("Sos necio vos", 404)
 
-# Endpoint para crear un usuario
-@app.route('/users', methods=['POST'])
+# Página para crear un nuevo usuario
+@app.route('/users', methods=['GET', 'POST'])
 def create_user():
-    data = request.get_json()
-    data["status"] = "user created"
-    return jsonify(data), 201
+    if request.method == 'POST':
+        data = request.form
+        cursor.execute("INSERT INTO users (name, telefono, status) VALUES (?, ?, ?)",
+                       (data["name"], data["telefono"], "user created"))
+        con.commit()
+        return redirect(url_for("root"))
+    return render_template("create_user.html")
 
-# Endpoint para actualizar un usuario
-@app.route('/users/<user_id>', methods=['PUT'])
+# Página para actualizar un usuario
+@app.route('/users/<int:user_id>/edit', methods=['GET', 'POST'])
 def update_user(user_id):
-    data = request.get_json()
-    updated_user = {
-        "id": user_id,
-        "name": data.get("name", "Aarock"),  # Valor por defecto si no se envía "name"
-        "telefono": data.get("telefono", "57993449"),  # Valor por defecto si no se envía "telefono"
-        "status": "user updated"
-    }
-    return jsonify(updated_user), 200
+    if request.method == 'POST':
+        data = request.form
+        cursor.execute("UPDATE users SET name = ?, telefono = ?, status = ? WHERE id = ?",
+                       (data["name"], data["telefono"], "user updated", user_id))
+        con.commit()
+        return redirect(url_for("root"))
 
-# Endpoint para borrar un usuario
-@app.route('/users/<user_id>', methods=['DELETE'])
+    cursor.execute("SELECT * FROM users WHERE id = ? AND status != 'user deleted'", (user_id,))
+    row = cursor.fetchone()
+    if row:
+        column_names = [description[0] for description in cursor.description]
+        user = dict(zip(column_names, row))
+        return render_template("update_user.html", user=user)
+    else:
+        return apology("Nada tenes que ver aca", 404)
+
+# Página para eliminar un usuario 
+@app.route('/users/<int:user_id>/delete', methods=['POST'])
 def delete_user(user_id):
-    response = {
-        "id": user_id,
-        "status": "user deleted"
-    }
-    return jsonify(response), 200
+    cursor.execute("UPDATE users SET status = 'user deleted' WHERE id = ?", (user_id,))
+    con.commit()
+    return redirect(url_for("root"))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

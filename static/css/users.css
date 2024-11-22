@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Fondo claro */
+    color: #333; /* Texto principal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Encabezado principal */
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Verde para destacar el título */
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+/* Enlaces de navegación */
+a {
+    text-decoration: none;
+    color: #007BFF; /* Azul para enlaces */
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Azul más oscuro en hover */
+}
+
+/* Tabla */
+table {
+    width: 80%; /* Ancho ajustado */
+    margin: 20px auto; /* Centrar la tabla */
+    border-collapse: collapse; /* Unir bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar relieve */
+    background-color: #fff; /* Fondo blanco */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+}
+
+th {
+    background-color: #4CAF50; /* Fondo verde */
+    color: #fff; /* Texto blanco */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fila par con fondo gris claro */
+}
+
+tr:hover {
+    background-color: #eaf6e8; /* Fondo verde claro al pasar el ratón */
+}
+
+td a {
+    color: #007BFF; /* Enlaces dentro de la tabla */
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+td a:hover {
+    color: #0056b3; /* Hover para enlaces de acciones */
+}
+
+/* Enlace al inicio */
+a[href="/"] {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 95%; /* Reducir el ancho en pantallas pequeñas */
+    }
+
+    th, td {
+        font-size: 0.9rem; /* Texto más pequeño */
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

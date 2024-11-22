@@ -1,0 +1,37 @@
+h1 {
+    text-align: center;
+    color: #4CAF50; /* Verde para el título */
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+p{
+    text-align: center;
+    color: #555; /* Gris suave */
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none; /* Quitar los puntos de la lista */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Separación entre elementos */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Fondo suave */
+    color: #333; /* Texto principal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+    margin: auto;
+    max-width: 800px;
+}
+
+li a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+

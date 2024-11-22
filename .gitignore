@@ -4,3 +4,4 @@ __pycache__/
 instance/
 *.sqlite3
 requirements.txt
+.idea

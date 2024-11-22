@@ -1,0 +1,93 @@
+/* Agregar estilos generales y aplicando clases de Bootstrap */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Fondo suave para todo el cuerpo */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fila de fondo gris claro para mejor legibilidad */
+}
+
+tbody tr:hover {
+    background-color: #e9ecef; /* Efecto al pasar el cursor */
+}
+
+td a {
+    margin: 0 5px;
+    color: #28a745; /* Color verde para enlaces */
+}
+
+td a:hover {
+    color: #155724; /* Color verde más oscuro para el hover */
+}
+
+/* Estilos adicionales para mejorar la tabla */
+table, th, td {
+    border: 1px solid #ddd; /* Borde gris suave */
+}
+
+table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave en la tabla */
+    border-radius: 8px;
+}
+
+th {
+    border-bottom: 2px solid #007bff;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Añadir un toque más atractivo a los enlaces dentro de las celdas */
+td a {
+    color: #007bff; /* Color azul para enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td a:hover {
+    color: #0056b3; /* Cambio de color en hover */
+}
+
+/* Estilos de los enlaces en la parte superior de la tabla */
+body a {
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+}

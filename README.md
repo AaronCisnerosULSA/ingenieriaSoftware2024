@@ -4,27 +4,19 @@
 :construction: Proyecto en construcción :construction:
 </h4>
 
-## 📁 Ejecucion del proyecto
+## 🛠️ Abre y ejecuta el proyecto
 
 *Clona el repositorio:*
 ```
 git clone <URL_DEL_REPOSITORIO>
-cd tiendaOnline
+cd ingenieriaSoftware2024
 ```
 
-Activa el entorno virtual (asegúrate de tener Python 3.8 o superior):
-En Windows: venv\Scripts\activate
+- Activa el entorno virtual (asegúrate de tener Python 3.8 o superior):
+- En Windows: venv\Scripts\activate
+- En MacOS/Linux: source venv/bin/activate
+- Instala las dependencias: pip install -r requirements.txt
 
-En MacOS/Linux: source venv/bin/activate
+## :hammer:Dificultades presentadas
 
-Instala las dependencias: pip install -r requirements.txt
-
-
-
-## 🛠️ Abre y ejecuta el proyecto
-
-**Muestra las instrucciones necesarias para abrir y ejecutar el proyecto**
-
-## :hammer:Funcionalidades del proyecto
-
-- `Funcionalidad 1`: descripción de la funcionalidad 1- `Funcionalidad 2`: descripción de la funcionalidad 2- `Funcionalidad 2a`: descripción de la funcionalidade 2a relacionada con la funcionalidad 2- `Funcionalidad 3`: descripción de la funcionalidad 3
+- `Descripcion`: Al correr la pagina, no se podian vincular el CSS con los templates. Se soluciono ingresando el css en una carpeta llamada obligatoriamente *static*. De lo contrario no funciona. 

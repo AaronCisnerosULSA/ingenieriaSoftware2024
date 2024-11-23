@@ -20,3 +20,30 @@ cd ingenieriaSoftware2024
 ## :hammer:Dificultades presentadas
 
 - `Descripcion`: Al correr la pagina, no se podian vincular el CSS con los templates. Se soluciono ingresando el css en una carpeta llamada obligatoriamente *static*. De lo contrario no funciona. 
+
+## 🛠️ Funcionamiento
+
+<h4 align="center">
+:home: Pagina Principal :home:
+</h4>
+
+![main](/static/images/main.jpg)
+
+<h4 align="center">
+:user: Lista de Usuarios :user:
+</h4>
+
+![main](/static/images/users.jpg)
+
+<h4 align="center">
+:user: Agregar Usuarios :user:
+</h4>
+
+![main](/static/images/add.jpg)
+
+<h4 align="center">
+:user: Editar Usuarios :user:
+</h4>
+
+![main](/static/images/edit.jpg)
+

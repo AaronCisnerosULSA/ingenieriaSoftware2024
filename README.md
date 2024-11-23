@@ -16,7 +16,10 @@ cd ingenieriaSoftware2024
 - En Windows: venv\Scripts\activate
 - En MacOS/Linux: source venv/bin/activate
 - Instala las dependencias: pip install -r requirements.txt
-
+- Correr la app 
+```
+python main.py
+```
 ## :hammer:Dificultades presentadas
 
 - `Descripcion`: Al correr la pagina, no se podian vincular el CSS con los templates. Se soluciono ingresando el css en una carpeta llamada obligatoriamente *static*. De lo contrario no funciona. 

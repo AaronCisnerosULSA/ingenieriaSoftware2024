@@ -4,9 +4,22 @@
 :construction: Proyecto en construcción :construction:
 </h4>
 
-## 📁 Acceso al proyecto
+## 📁 Ejecucion del proyecto
 
-**Indica cómo se puede descargar o acceder al código fuente del proyecto, ya sea proyecto inicial o final**
+*Clona el repositorio:*
+```
+git clone <URL_DEL_REPOSITORIO>
+cd tiendaOnline
+```
+
+Activa el entorno virtual (asegúrate de tener Python 3.8 o superior):
+En Windows: venv\Scripts\activate
+
+En MacOS/Linux: source venv/bin/activate
+
+Instala las dependencias: pip install -r requirements.txt
+
+
 
 ## 🛠️ Abre y ejecuta el proyecto
 

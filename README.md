@@ -3,7 +3,7 @@
 <h4 align="center">
 :construction: Proyecto en construcción :construction:
 </h4>
-## 📁 Acceso al proyecto
+## Acceso al proyecto
 
 **Indica cómo se puede descargar o acceder al código fuente del proyecto, ya sea proyecto inicial o final**
 

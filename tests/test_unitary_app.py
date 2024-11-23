@@ -1,49 +1,76 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from app import app
+from models import get_users, get_user, add_user, delete_user, update_user, User
 
-class TestUserAPI(unittest.TestCase):
+class TestModels(unittest.TestCase):
 
-    @patch('models.add_user')
-    def test_add_user(self, mock_add_user):
-        # Configurar el mock para simular la respuesta de la base de datos
-        mock_add_user.return_value = MagicMock(id=1, name='John Doe', telefono='123456789')
-        
-        with app.test_client() as client:
-            response = client.post('/users/new', data={'name': 'John Doe', 'telefono': '123456789'})
-        
-        self.assertEqual(response.status_code, 302)
-        mock_add_user.assert_called_once_with('John Doe', '123456789')
+    @patch('models.User.query')
+    def test_get_users(self, mock_query):
+        # Simular la respuesta de la consulta
+        mock_query.all.return_value = [
+            MagicMock(id=1, name='John Doe', telefono='123456789'),
+            MagicMock(id=2, name='Jane Doe', telefono='987654321')
+        ]
 
-    @patch('models.get_users')
-    def test_get_users(self, mock_get_users):
-        mock_get_users.return_value = [MagicMock(id=1, name='John Doe', telefono='123456789')]
-        
-        with app.test_client() as client:
-            response = client.get('/users')
-        
-        self.assertEqual(response.status_code, 200)
-        self.assertIn('John Doe', response.data.decode())
+        users = get_users()
+        self.assertEqual(len(users), 2)
+        self.assertEqual(users[0].name, 'John Doe')
+        self.assertEqual(users[1].telefono, '987654321')
 
-    @patch('models.update_user')
-    def test_edit_user(self, mock_update_user):
-        mock_update_user.return_value = MagicMock(id=1, name='Jane Doe', telefono='987654321')
-        
-        with app.test_client() as client:
-            response = client.post('/users/edit/1', data={'name': 'Jane Doe', 'telefono': '987654321'})
-        
-        self.assertEqual(response.status_code, 302)
-        mock_update_user.assert_called_once_with(1, 'Jane Doe', '987654321')
+    @patch('models.User.query')
+    def test_get_user(self, mock_query):
+        # Simular la respuesta de la consulta
+        mock_user = MagicMock(id=1, name='John Doe', telefono='123456789')
+        mock_query.get.return_value = mock_user
 
-    @patch('models.delete_user')
-    def test_delete_user(self, mock_delete_user):
-        mock_delete_user.return_value = MagicMock(id=1, name='John Doe', telefono='123456789')
-        
-        with app.test_client() as client:
-            response = client.get('/users/delete/1')
-        
-        self.assertEqual(response.status_code, 302)
-        mock_delete_user.assert_called_once_with(1)
+        user = get_user(1)
+        self.assertIsNotNone(user)
+        self.assertEqual(user.name, 'John Doe')
+
+    @patch('models.db.session')
+    @patch('models.User')
+    def test_add_user(self, mock_user_class, mock_session):
+        # Simular el usuario creado
+        mock_user = MagicMock(id=1, name='John Doe', telefono='123456789')
+        mock_user_class.return_value = mock_user
+
+        # Ejecutar la función
+        user = add_user(name='John Doe', telefono='123456789')
+
+        # Verificar que se añadieron y confirmaron los cambios
+        mock_session.add.assert_called_once_with(mock_user)
+        mock_session.commit.assert_called_once()
+        self.assertEqual(user.name, 'John Doe')
+
+    @patch('models.db.session')
+    @patch('models.User.query')
+    def test_delete_user(self, mock_query, mock_session):
+        # Simular un usuario existente
+        mock_user = MagicMock(id=1, name='John Doe', telefono='123456789')
+        mock_query.get.return_value = mock_user
+
+        # Ejecutar la función
+        user = delete_user(1)
+
+        # Verificar que se eliminaron y confirmaron los cambios
+        mock_session.delete.assert_called_once_with(mock_user)
+        mock_session.commit.assert_called_once()
+        self.assertEqual(user.name, 'John Doe')
+
+    @patch('models.db.session')
+    @patch('models.User.query')
+    def test_update_user(self, mock_query, mock_session):
+        # Simular un usuario existente
+        mock_user = MagicMock(id=1, name='John Doe', telefono='123456789')
+        mock_query.get.return_value = mock_user
+
+        # Ejecutar la función
+        user = update_user(1, name='Jane Doe', telefono='987654321')
+
+        # Verificar que se actualizaron los valores y se confirmaron los cambios
+        self.assertEqual(user.name, 'Jane Doe')
+        self.assertEqual(user.telefono, '987654321')
+        mock_session.commit.assert_called_once()
 
 if __name__ == '__main__':
     unittest.main()

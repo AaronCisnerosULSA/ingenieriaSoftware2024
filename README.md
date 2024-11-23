@@ -24,25 +24,25 @@ cd ingenieriaSoftware2024
 ## 🛠️ Funcionamiento
 
 <h4 align="center">
-:home: Pagina Principal :home:
+Pagina Principal
 </h4>
 
 ![main](/static/images/main.jpg)
 
 <h4 align="center">
-:user: Lista de Usuarios :user:
+Lista de Usuarios 
 </h4>
 
 ![main](/static/images/users.jpg)
 
 <h4 align="center">
-:user: Agregar Usuarios :user:
+Agregar Usuarios 
 </h4>
 
 ![main](/static/images/add.jpg)
 
 <h4 align="center">
-:user: Editar Usuarios :user:
+Editar Usuarios
 </h4>
 
 ![main](/static/images/edit.jpg)

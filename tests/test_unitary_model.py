@@ -6,7 +6,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_add_user(self, mock_user_class, mock_session):
+    def test_model_add_user(self, mock_user_class, mock_session):
         # Configurar el comportamiento del mock de User
         mock_user = MagicMock()
         mock_user.id = 1
@@ -27,7 +27,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_get_user(self, mock_user_class, mock_session):
+    def test_model_get_user(self, mock_user_class, mock_session):
         # Configuración del mock para devolver un usuario con atributos reales
         mock_user = MagicMock()
         mock_user.id = 1
@@ -47,7 +47,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_get_users(self, mock_user_class, mock_session):
+    def test_model_get_users(self, mock_user_class, mock_session):
         # Configuración del mock para devolver una lista de usuarios
         mock_user1 = MagicMock(id=1, name='John Doe', telefono='123456789')
         mock_user2 = MagicMock(id=2, name='Jane Doe', telefono='987654321')
@@ -62,7 +62,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_update_user(self, mock_user_class, mock_session):
+    def test_model_update_user(self, mock_user_class, mock_session):
         # Configuración de un usuario mock
         mock_user = MagicMock(id=1, name='John Doe', telefono='123456789')
         mock_user_class.query.get.return_value = mock_user
@@ -79,7 +79,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_delete_user(self, mock_user_class, mock_session):
+    def test_model_delete_user(self, mock_user_class, mock_session):
         # Crear un usuario mock con atributos reales
         mock_user = MagicMock()
         mock_user.id = 1
@@ -103,7 +103,7 @@ class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
     @patch('models.User')
-    def test_delete_user_not_found(self, mock_user_class, mock_session):
+    def test_model_delete_user_not_found(self, mock_user_class, mock_session):
         # Configuración para que el usuario no sea encontrado
         mock_user_class.query.get.return_value = None
 

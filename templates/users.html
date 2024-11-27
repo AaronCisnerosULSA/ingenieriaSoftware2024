@@ -8,28 +8,34 @@
 <body>
     <h1>Lista de Usuarios</h1>
     <a href="/">Volver al inicio</a> | <a href="/users/new">Agregar un usuario</a>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Teléfono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.name }}</td>
-                <td>{{ user.telefono }}</td>
-                <td>
-                    <a href="/users/edit/{{ user.id }}">Editar</a> |
-                    <a href="/users/delete/{{ user.id }}">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    {% if users %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.telefono }}</td>
+                    <td>
+                        <a href="/users/{{ user.id }}/edit">Editar</a> |
+                        <form action="/users/{{ user.id }}/delete" method="post" style="display:inline;">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No users found</p>
+    {% endif %}
 </body>
 </html>

@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from models import db, User, add_user, get_user, get_users, update_user, delete_user
 
+
 class TestModels(unittest.TestCase):
 
     @patch('models.db.session')
@@ -24,7 +25,6 @@ class TestModels(unittest.TestCase):
         # Asegurarse de que el nombre del usuario es 'John Doe'
         self.assertEqual(user.name, 'John Doe')
 
-
     @patch('models.db.session')
     @patch('models.User')
     def test_model_get_user(self, mock_user_class, mock_session):
@@ -33,7 +33,7 @@ class TestModels(unittest.TestCase):
         mock_user.id = 1
         mock_user.name = 'John Doe'
         mock_user.telefono = '123456789'
-        
+
         # Configurar el query para que devuelva el usuario simulado
         mock_user_class.query.get.return_value = mock_user
 
@@ -43,7 +43,6 @@ class TestModels(unittest.TestCase):
         # Asegurarse de que se haya obtenido el usuario correctamente
         self.assertEqual(user.name, 'John Doe')
         self.assertEqual(user.telefono, '123456789')
-
 
     @patch('models.db.session')
     @patch('models.User')
@@ -85,7 +84,7 @@ class TestModels(unittest.TestCase):
         mock_user.id = 1
         mock_user.name = 'John Doe'
         mock_user.telefono = '123456789'
-        
+
         # Configurar el query para que devuelva el usuario simulado
         mock_user_class.query.get.return_value = mock_user
 
@@ -99,7 +98,6 @@ class TestModels(unittest.TestCase):
         # Asegurarse de que el usuario eliminado tiene los atributos esperados
         self.assertEqual(deleted_user.name, 'John Doe')
         self.assertEqual(deleted_user.telefono, '123456789')
-
 
     @patch('models.db.session')
     @patch('models.User')

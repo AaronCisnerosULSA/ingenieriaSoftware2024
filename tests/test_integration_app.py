@@ -1,7 +1,6 @@
 import pytest
 from app import app, db, User
 
-
 @pytest.fixture
 def client():
     # Configura el entorno de pruebas
@@ -15,13 +14,11 @@ def client():
         with app.test_client() as client:
             yield client
 
-
 def test_root(client):
     """Prueba que el endpoint raíz devuelve el template correcto."""
     response = client.get("/")
     assert response.status_code == 200
     assert b"Bienvenido" in response.data  # Cambia según el texto en tu index.html
-
 
 def test_add_user(client):
     """Prueba agregar un usuario."""
@@ -33,7 +30,6 @@ def test_add_user(client):
         assert user is not None
         assert user.telefono == "123456789"
 
-
 def test_get_users(client):
     """Prueba obtener la lista de usuarios."""
     # Agrega un usuario de ejemplo
@@ -43,7 +39,6 @@ def test_get_users(client):
     response = client.get("/users")
     assert response.status_code == 200
     assert b"Ana" in response.data  # Cambia según el template de users.html
-
 
 def test_edit_user(client):
     # Crear un usuario para editar
@@ -67,7 +62,6 @@ def test_edit_user(client):
     updated_user = User.query.get(user_id)
     assert updated_user.name == "Jane Doe"
     assert updated_user.telefono == "987654321"
-
 
 def test_delete_user(client):
     # Crear un usuario para eliminar
